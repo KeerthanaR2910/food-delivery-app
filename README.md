@@ -46,5 +46,6 @@ npm run build
 This command will build the app and add it to dist folder
 
 ## Swagger Documentation
-You can find swagger documentation on `/api-docs` endpoint
-swagger endpoint foe the deployed application  - https://food-delivery-app-jjgg.onrender.com/api-docs/#/
+You can find swagger documentation on `/api-docs` endpoint.
+
+Swagger endpoint for the deployed application  - https://food-delivery-app-jjgg.onrender.com/api-docs/#/

@@ -1,0 +1,156 @@
+openapi: 3.0.0
+info:
+  title: Food Delivery API
+  description: API documentation for the food delivery app
+  version: 1.0.0
+paths:
+  /api/v1/organization:
+    post:
+      summary: Create a new organization
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Organization'
+      responses:
+        '201':
+          description: An object containing information about organisation created
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+  /api/v1/item:
+    post:
+      summary: Create a new item
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Item'
+      responses:
+        '201':
+          description: An object containing information about organisation created
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+  /api/v1/price:
+    post:
+      summary: Create a new price
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Price'
+      responses:
+        '201':
+          description: An object containing information about organisation created
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+  /api/v1/calculate-price:
+    post:
+      summary: Calculate price
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CalculatePrice'
+      responses:
+        '201':
+          description: An object containing information about organisation created
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+components:
+  schemas:
+    Organization:
+      type: object
+      properties:
+        name:
+          type: string
+          example: 'organisation'
+          required: true
+    Item:
+      type: object
+      properties:
+        type:
+          type: string
+          required: true
+          example: perishable
+        description:
+          type: string
+          required: type
+          example: This item is perishable
+    Price:
+      type: object
+      properties:
+        organization_id:
+          type: string
+          required: true
+          example: 1
+        item_id:
+          type: string
+          required: type
+          example: 1
+        zone:
+          type: string
+          required: true
+          example: central
+        base_distance_in_km:
+          type: number
+          required: type
+          example: 5
+        km_price:
+          type: string
+          required: type
+          example: 1.5/1
+        fix_price:
+          type: string
+          required: type
+          example: 10
+    CalculatePrice:
+      type: object
+      properties:
+        organization_id:
+          type: string
+          required: true
+          example: 1
+        item_type:
+          type: string
+          required: type
+          example: perishable
+        zone:
+          type: string
+          required: true
+          example: central
+        total_distance:
+          type: number
+          required: type
+          example: 12

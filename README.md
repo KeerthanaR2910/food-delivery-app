@@ -21,7 +21,7 @@ $ npm --version
 ## Project setup
 1. Clone the project
 ```shell
-git clone https://github.com/KeerthanaR2910/aquera.git
+git clone https://github.com/KeerthanaR2910/food-delivery-app.git  
 ```
 2. install packages
 ```shell

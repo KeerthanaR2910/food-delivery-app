@@ -1,12 +1,12 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const swagger = require('./swagger');
-const {  testConnection } = require('./database');
+const swagger = require('./src/swagger');
+const {  testConnection } = require('./src/database');
 
-const organizationRoutes = require('./routes/organisationRoutes');
-const itemRoutes = require('./routes/itemRoutes');
-const pricingRoutes = require('./routes/pricingRoutes');
+const organizationRoutes = require('./src/routes/organisationRoutes');
+const itemRoutes = require('./src/routes/itemRoutes');
+const pricingRoutes = require('./src/routes/pricingRoutes');
 
 const app = express();
 
